@@ -9,6 +9,13 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // Fundamental para leer req.body
 
+app.get('/', (req, res) => {
+    res.json({ 
+        mensaje: '¡API de EASYLEAD funcionando joya en la nube! 🚀',
+        estado: 'Online'
+    });
+});
+
 // Montamos las rutas de autenticación bajo el prefijo /api/auth
 app.use('/api/auth', require('./src/routes/authRoutes'));
 
